@@ -1,0 +1,79 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		},
+		{
+			"path": "C:/Program Files/Epic Games/UE_4.26"
+		},
+	],
+
+	"settings": {
+		// editor
+		"translate_tabs_to_spaces": false,
+		// extensions: LSP
+		// "LSP": {
+		// 	"clangd": {
+		// 		"enabled": true,
+		// 	},
+		// },
+	},
+	"build_systems": [
+		{
+			"name": "Build",
+			// between "^start" and "end$" tokens:
+			// path(line[,][column]): message
+			// ^(.+)\((\d+),?(\d+)?\): (.+)$
+			"file_regex": "^ *(.+)\\((\\d+),?(\\d+)?\\) *: (.+)$",
+			"working_dir": "${project_path:${folder}}",
+			"windows": {
+				"cmd": "project_build.bat Development Editor",
+			},
+			"word_wrap": false,
+		},
+		{
+			"name": "Clean",
+			"working_dir": "${project_path:${folder}}",
+			"windows": {
+				"cmd": "project_build.bat Development Editor -clean",
+			},
+			"word_wrap": false,
+		},
+		{
+			"name": "Generate VSCode",
+			"working_dir": "${project_path:${folder}}",
+			"windows": {
+				"cmd": "project_build.bat Development Editor -projectfiles -game -engine -vscode",
+			},
+		},
+		{
+			"name": "Generate VS2019",
+			"working_dir": "${project_path:${folder}}",
+			"windows": {
+				"cmd": "project_build.bat Development Editor -projectfiles -game -engine -2019",
+			},
+		},
+		{
+			"name": "Launch Editor",
+			"working_dir": "${project_path:${folder}}",
+			"windows": {
+				"cmd": "project_editor.bat Development",
+			},
+		},
+		{
+			"name": "Debug",
+			"working_dir": "${project_path:${folder}}",
+			"windows": {
+				"cmd": "project_editor.bat Development -log -game -windowed -resx=1280 -resy=720",
+			},
+		},
+		{
+			"name": "Run",
+			"working_dir": "${project_path:${folder}}",
+			"windows": {
+				"cmd": "project_editor.bat Development -log -game -windowed -resx=1280 -resy=720",
+			},
+		},
+	],
+}

@@ -1,0 +1,16 @@
+# https://git-scm.com/docs/gitattributes
+
+* text=auto
+
+# code
+/Source/**/*.h   text diff=cpp    working-tree-encoding=UTF-8
+/Source/**/*.cpp text diff=cpp    working-tree-encoding=UTF-8
+/Source/**/*.cs  text diff=csharp working-tree-encoding=UTF-8
+
+# project
+/*.bat text eol=crlf
+
+# assets
+/Content/**/*.txt    text working-tree-encoding=UTF-8 eol=lf
+/Content/**/*.umap   binary
+/Content/**/*.uasset binary
