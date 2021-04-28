@@ -2,10 +2,22 @@
 	"folders":
 	[
 		{
-			"path": "."
+			"path": ".",
+			"folder_exclude_patterns": [
+				".git",
+				".vscode",
+				"Binaries",
+				"DerivedDataCache",
+				"Intermediate",
+				"Saved",
+			],
+			"file_exclude_patterns": [
+				"*.sublime-workspace",
+				"*.ignore",
+			],
 		},
 		{
-			"path": "C:/Program Files/Epic Games/UE_4.26"
+			"path": "C:/Program Files/Epic Games/UE_4.27"
 		},
 	],
 
@@ -23,8 +35,8 @@
 		{
 			"name": "Build",
 			// between "^start" and "end$" tokens:
-			// path(line[,][column]): message
-			// ^(.+)\((\d+),?(\d+)?\): (.+)$
+			// [ ]path(line[,][column])[ ]: message
+			// ^ *(.+)\((\d+),?(\d+)?\) *: (.+)$
 			"file_regex": "^ *(.+)\\((\\d+),?(\\d+)?\\) *: (.+)$",
 			"working_dir": "${project_path:${folder}}",
 			"windows": {

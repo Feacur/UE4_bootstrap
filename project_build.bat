@@ -18,7 +18,7 @@ set ProjectFolder=%cd%
 set Project=Something
 
 rem |> PREPARE TOOLS
-set EnginePath=C:/Program Files/Epic Games/UE_4.26/Engine
+set EnginePath=C:/Program Files/Epic Games/UE_4.27/Engine
 set "PATH=%PATH%;%EnginePath%/Binaries/DotNET"
 
 rem |> DO

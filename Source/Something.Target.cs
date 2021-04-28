@@ -8,15 +8,18 @@ public class SomethingTarget : TargetRules
 	{
 		Type = TargetType.Game;
 		DefaultBuildSettings = BuildSettingsVersion.V2;
-		ExtraModuleNames.AddRange( new string[] { "Something" } );
+		ExtraModuleNames.Add("Something");
+
+		// bPrintToolChainTimingInfo = true;
+		// bParseTimingInfoForTracing = true;
 
 		bUsePCHFiles = false;
 
 		bIWYU = true;
 		bEnforceIWYU = true;
 
-		// bUseUnityBuild = true;
-		// bForceUnityBuild = false;
-		// bUseAdaptiveUnityBuild = true;
+		bUseUnityBuild = true;
+		bForceUnityBuild = true;
+		bUseAdaptiveUnityBuild = false;
 	}
 }
