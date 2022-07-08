@@ -19,7 +19,7 @@ set "PATH=%PATH%;%EnginePath%/Binaries/Win64"
 
 if %State% == Development (
 	set Action=UE4Editor
-) else if %State% == Debug (
+) else if %State% == DebugGame (
 	set Action=UE4Editor-Win64-DebugGame
 ) else if %State% == Debug (
 	set Action=UE4Editor-Win64-Debug
